@@ -10,7 +10,6 @@ void setup()
   fire = loadImage("fireofrah.jpg");
   eye = loadImage("eyeofrah.jpeg");
   beam = loadImage("beamofrah.png");
-  frameRate(60);
 }
 
 void draw()
@@ -55,7 +54,7 @@ class Particle
   void move() {
     double c = dist(0, 0, (float)myX, (float)myY);
     
-    mySpeed = 2000/(c+25);
+    mySpeed = 500/(c+25);
     size += 0.1;
     
     myX += Math.cos(myAngle) * mySpeed;
@@ -83,6 +82,6 @@ class OddballParticle extends Particle
   }
   
   void move() {
-    myAngle += vectorwithdirectionandmagnitude*(Math.random()*TWO_PI)/10;
+    myAngle += vectorwithdirectionandmagnitude*(Math.random()*TWO_PI)/40;
   }
 }
