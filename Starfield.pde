@@ -10,15 +10,12 @@ void setup()
   fire = loadImage("fireofrah.jpg");
   eye = loadImage("eyeofrah.jpeg");
   beam = loadImage("beamofrah.png");
-  fire.resize(50, 50);
-  beam.resize(35, 300);
-  eye.resize(440, 450);
 }
 
 void draw()
 {
   background(255);
-  image(eye, -40, -50);
+  image(eye, -40, -50, 440, 450);
   for (int i = 0; i < EyeOfRah.size(); i++) {
     Particle eor = EyeOfRah.get(i);
     eor.show();
@@ -80,7 +77,7 @@ class OddballParticle extends Particle
     translate((float)myX, (float)myY);
     rotate((float)myAngle);
     translate(-5, 0);
-    image(beam, 0, 0);
+    image(beam, 0, 0, 35, 300);
     popMatrix();
   }
   
