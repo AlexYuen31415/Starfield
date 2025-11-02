@@ -54,7 +54,7 @@ class Particle
   void move() {
     double c = dist(0, 0, (float)myX, (float)myY);
     
-    mySpeed = 500/(c+25);
+    mySpeed = 1000/(c+25);
     size += 0.1;
     
     myX += Math.cos(myAngle) * mySpeed;
@@ -82,6 +82,6 @@ class OddballParticle extends Particle
   }
   
   void move() {
-    myAngle += vectorwithdirectionandmagnitude*(Math.random()*TWO_PI)/40;
+    myAngle += vectorwithdirectionandmagnitude*(Math.random()*TWO_PI)/10;
   }
 }
