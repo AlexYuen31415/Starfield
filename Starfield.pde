@@ -10,6 +10,7 @@ void setup()
   fire = loadImage("fireofrah.jpg");
   eye = loadImage("eyeofrah.jpeg");
   beam = loadImage("beamofrah.png");
+  frameRate(60);
 }
 
 void draw()
