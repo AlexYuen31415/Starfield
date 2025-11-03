@@ -33,17 +33,17 @@ void draw()
 }
 class Particle
 {
-  double myAngle = Math.random()*TWO_PI;
-  double myX = Math.cos(myAngle);
-  double myY = Math.sin(myAngle);
-  double size = Math.random()*100;
-  double mySpeed;
+  private double myAngle = Math.random()*TWO_PI;
+  private double myX = Math.cos(myAngle);
+  private double myY = Math.sin(myAngle);
+  private double size = Math.random()*100;
+  private double mySpeed;
   
   public Particle() {
 
   }
   
-  void show() {
+  public void show() {
     pushMatrix();
     translate(200 + (float)myX, 200 + (float)myY);
     rotate((float)myAngle);
@@ -51,7 +51,7 @@ class Particle
     popMatrix();
   }
   
-  void move() {
+  public void move() {
     double c = dist(0, 0, (float)myX, (float)myY);
     
     mySpeed = 1000/(c+25);
@@ -65,13 +65,13 @@ class Particle
 class OddballParticle extends Particle
 {
   
-  double vectorwithdirectionandmagnitude = (((int)(Math.random()+0.5))*2-1);
+  private double vectorwithdirectionandmagnitude = (((int)(Math.random()+0.5))*2-1);
   
-  OddballParticle() {
-    
+  public OddballParticle() {
+
   }
   
-  void show() {
+  public void show() {
     pushMatrix();
     translate(200, 200);
     translate((float)myX, (float)myY);
@@ -81,7 +81,7 @@ class OddballParticle extends Particle
     popMatrix();
   }
   
-  void move() {
+  public void move() {
     myAngle += vectorwithdirectionandmagnitude*(Math.random()*TWO_PI)/10;
   }
 }
